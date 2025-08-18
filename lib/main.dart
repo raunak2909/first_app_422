@@ -1,24 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:first_app_422/home_page.dart';
 
 void main(){
-
-  ///Person person = Person(occ: Occupation(name: "Raunak", job: "Flutter", company: "Google"), personName: "Raunak", age: 21, car: Car());
-
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.amber,
-        title: Text('Home', style: TextStyle(
-          color: Colors.white
-        )),
-      ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: (){
-
-          }),
-    ),
-  ));
+  runApp(MyApp());
 }
+
+class MyApp extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+
+    Person.name(name: "Raman");
+
+    Person(name: "Rajeev", job: "Flutter", company: "Google");
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
+    );
+  }
+}
+
+
+class Person{
+  String? name;
+  String? job;
+  String? company;
+  Person.name({this.name});
+  Person({this.name, this.job, this.company});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
