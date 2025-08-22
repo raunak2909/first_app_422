@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
-class A{
-
-}
+class A {}
 
 class MyHomePage extends StatelessWidget {
-
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController mobNoController = TextEditingController();
 
-  onBtnTap(){
-
-  }
+  onBtnTap() {}
 
   @override
   Widget build(BuildContext context) {
@@ -25,157 +20,339 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.amber,
         foregroundColor: Colors.white,
       ),
-      body: Column(
+      body: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(11.0),
-            child: TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                prefix: Text('Mr./Mrs.'),
-                enabled: true,
-                labelText: "Name",
-                hintText: "Enter your name",
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(21),
-                    borderSide: BorderSide(
-                        width: 2,
-                        color: Colors.blue
+          Container(
+            width: 350,
+            height: 450,
+            padding: EdgeInsets.symmetric(horizontal: 21, vertical: 34),
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xffE6F1FA),
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Strawberry Pavlova',
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 11,
+                ),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xffE6F1FA),
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Pavlova is a meringue-based dessert named after the Russian ballerine Anna Pavlova.Pavlova featues a crisp crust and soft, light inside, topped with fruit and whipped cream.',
+                      style: TextStyle(fontSize: 17),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 11,
+                ),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xffE6F1FA),
+                    border: Border.all(color: Colors.black, width: 1),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.black45, size: 16,),
+                          Icon(Icons.star, color: Colors.black45, size: 16,),
+                          Icon(Icons.star, color: Colors.black45, size: 16,),
+                          Icon(Icons.star, color: Colors.black45, size: 16,),
+                          Icon(Icons.star, color: Colors.black45, size: 16,),
+                        ],
+                      ),
+                      Text("170 Reviews")
+                    ],
+                  )
+                ),
+                SizedBox(
+                  height: 11,
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 11),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE6F1FA),
+                      border: Border.all(color: Colors.black, width: 1),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          children: [
+                            Icon(Icons.book, color: Colors.green, size: 16,),
+                            Text('PREP:'),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text('25 min')
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Icon(Icons.timer_outlined, color: Colors.green, size: 16,),
+                            Text('COOK:'),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text('1 hr')
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Icon(Icons.restaurant, color: Colors.green, size: 16,),
+                            Text('FEEDS:'),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text('4-6')
+                          ],
+                        ),
+                      ],
                     )
                 ),
-                disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(21),
-                    borderSide: BorderSide(
-                        width: 2,
-                        color: Colors.grey.shade200
-                    )
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(21),
-                  borderSide: BorderSide(
-                    width: 2,
-                    color: Colors.amber
-                  )
-                )
-              ),
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(11.0),
-            child: TextField(
-              controller: emailController,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                suffix: Text("@gmail.com"),
-                  enabled: true,
-                  labelText: "Email",
-                  hintText: "Enter your email",
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.blue
-                      )
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.grey.shade200
-                      )
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.amber
-                      )
-                  )
-              ),
-            ),
+          Image.asset(
+            "assets/images/bg_cake.png",
+            fit: BoxFit.cover,
+            width: 700,
+            height: 450,
           ),
-          Padding(
-            padding: const EdgeInsets.all(11.0),
-            child: TextField(
-              controller: mobNoController,
-              obscureText: true,
-              obscuringCharacter: "*",
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                suffix: Icon(Icons.visibility_off),
-                prefixText: "+91",
-                  enabled: true,
-                  labelText: "MobNo",
-                  hintText: "Enter your Mobile no",
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.blue
-                      )
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.grey.shade200
-                      )
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.amber
-                      )
-                  )
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(11.0),
-            child: TextField(
-              controller: mobNoController,
-              obscureText: true,
-              obscuringCharacter: "*",
-              keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                  suffix: Icon(Icons.visibility_off),
-                  //prefixText: "+91",
-                  enabled: true,
-                  labelText: "Password",
-                  hintText: "Enter your password",
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.blue
-                      )
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.grey.shade200
-                      )
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.amber
-                      )
-                  )
-              ),
-            ),
-          ),
-          ElevatedButton(onPressed: (){
-            print("email: ${emailController.text}@gmail.com");
-          }, child: Text('Submit'))
         ],
-      )
+      ),
     );
   }
 }
+
+///SingleChildScrollView(
+//         child: Column(
+//           //direction: Axis.vertical,
+//           //mainAxisAlignment: MainAxisAlignment.spaceAround,
+//           //crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.blue,
+//             ),
+//             Container(
+//               width: 200,
+//               height: 100,
+//               color: Colors.orange,
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.amber,
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.blue,
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.orange,
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.amber,
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.blue,
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.orange,
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: Colors.amber,
+//             ),
+//
+//           ],
+//         ),
+//       )
+
+///InkWell(
+//         child: Column(
+//           children: [
+//             Padding(
+//               padding: const EdgeInsets.all(11.0),
+//               child: TextField(
+//                 controller: nameController,
+//                 decoration: InputDecoration(
+//                   prefix: Text('Mr./Mrs.'),
+//                   enabled: true,
+//                   labelText: "Name",
+//                   hintText: "Enter your name",
+//                   focusedBorder: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(21),
+//                       borderSide: BorderSide(
+//                           width: 2,
+//                           color: Colors.blue
+//                       )
+//                   ),
+//                   disabledBorder: OutlineInputBorder(
+//                       borderRadius: BorderRadius.circular(21),
+//                       borderSide: BorderSide(
+//                           width: 2,
+//                           color: Colors.grey.shade200
+//                       )
+//                   ),
+//                   enabledBorder: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(21),
+//                     borderSide: BorderSide(
+//                       width: 2,
+//                       color: Colors.amber
+//                     )
+//                   )
+//                 ),
+//               ),
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.all(11.0),
+//               child: TextField(
+//                 controller: emailController,
+//                 keyboardType: TextInputType.emailAddress,
+//                 decoration: InputDecoration(
+//                   suffix: Text("@gmail.com"),
+//                     enabled: true,
+//                     labelText: "Email",
+//                     hintText: "Enter your email",
+//                     focusedBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.blue
+//                         )
+//                     ),
+//                     disabledBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.grey.shade200
+//                         )
+//                     ),
+//                     enabledBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.amber
+//                         )
+//                     )
+//                 ),
+//               ),
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.all(11.0),
+//               child: TextField(
+//                 controller: mobNoController,
+//                 obscureText: true,
+//                 obscuringCharacter: "*",
+//                 keyboardType: TextInputType.phone,
+//                 decoration: InputDecoration(
+//                   suffix: Icon(Icons.visibility_off),
+//                   prefixText: "+91",
+//                     enabled: true,
+//                     labelText: "MobNo",
+//                     hintText: "Enter your Mobile no",
+//                     focusedBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.blue
+//                         )
+//                     ),
+//                     disabledBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.grey.shade200
+//                         )
+//                     ),
+//                     enabledBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.amber
+//                         )
+//                     )
+//                 ),
+//               ),
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.all(11.0),
+//               child: TextField(
+//                 controller: mobNoController,
+//                 obscureText: true,
+//                 obscuringCharacter: "*",
+//                 keyboardType: TextInputType.phone,
+//                 decoration: InputDecoration(
+//                     suffix: Icon(Icons.visibility_off),
+//                     //prefixText: "+91",
+//                     enabled: true,
+//                     labelText: "Password",
+//                     hintText: "Enter your password",
+//                     focusedBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.blue
+//                         )
+//                     ),
+//                     disabledBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.grey.shade200
+//                         )
+//                     ),
+//                     enabledBorder: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(21),
+//                         borderSide: BorderSide(
+//                             width: 2,
+//                             color: Colors.amber
+//                         )
+//                     )
+//                 ),
+//               ),
+//             ),
+//             ElevatedButton(onPressed: (){
+//               print("email: ${emailController.text}@gmail.com");
+//             }, child: Text('Submit'))
+//           ],
+//         ),
+//       )
 
 ////*Center(
 //         child: Row(
@@ -297,8 +474,8 @@ class MyHomePage extends StatelessWidget {
 //         ),
 //       ),
 
-class Home{
+class Home {
   Home.basic();
-  Home.details();
 
+  Home.details();
 }
